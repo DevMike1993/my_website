@@ -1,0 +1,163 @@
+body {
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    background-color: #000; /* Czarne tło stron */
+    color: #fff; /* Białe czcionki */
+}
+
+/* Styl dla domyślnego widoku*/
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo-container,
+.header-container,
+.menu-container {
+    display: flex;
+}
+
+.logo-container {
+    justify-content: flex-start; /* Logo będzie na lewej stronie */
+}
+
+.header-container {
+    justify-content: center; /* Nagłówek będzie na środku */
+}
+
+.menu-container {
+    justify-content: flex-end; /* Menu będzie na prawej stronie */
+}
+
+
+footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    margin-top: auto; /* Umieść stopkę na dole */
+    font-size: 1rem;
+}
+
+/* Style dla widoku mobilnego (ekrany o szerokości mniejszej niż 769px) */
+
+@media only screen and (max-width: 768px) {
+    .navbar {
+        background-color: #000; /* Domyślne tło navbara na mniejszych ekranach */
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%; /* Szerokość navbara na całą szerokość ekranu */
+    }
+
+    .logo {
+        margin-left: 0rem;
+    }
+
+    .logo img {
+        width: 100px; /* Zmiana szerokości logo dla widoku domyślnego */
+        height: auto; /* Automatyczna wysokość, aby zachować proporcje */
+        margin-left: 0.5rem;    
+    }
+
+    .menu-icon {
+        display: block; /* Wyświetl ikonę hamburgera na mniejszych ekranach */
+        order: 3; /* Ikona hamburgera na końcu w widoku mobilnym */
+        margin-bottom: 10px; /* Dodatkowy odstęp pod ikoną */
+        margin-right: 20px; /* Przesuń ikonę menu w prawo o 20px */
+    }
+
+    .header {
+        display: block; /* Wyświetl nagłówek w widoku mobilnym */
+        order: 2; /* Nagłówek po logo w widoku mobilnym */
+        margin-top: 0px; /* Drobna korekta marginesu, aby być idealnie na środku */
+        margin-right: 2rem;
+        text-align: center; /* Wyśrodkuj tekst w nagłówku */
+    }
+
+    .menu {
+        display: none; /* Ukryj menu w domyślnym widoku */
+        order: 4; /* Menu na końcu w widoku mobilnym */    
+    }
+
+    .menu.show {
+        display: flex; /* Pokaż menu po kliknięciu w ikonę hamburgera */
+        flex-direction: column; /* Wyświetl menu pionowo */
+        align-items: center; /* Wyśrodkuj elementy menu */
+        position: absolute;
+        top: 60px; /* Ustaw menu poniżej navbara */
+        right: 0; /* Przesuń menu na prawo */
+        width: 100%; /* Szerokość menu na całą szerokość ekranu */
+    }
+
+    .menu-item {
+        text-align: center; /* Wyśrodkowanie tekstu w menu na mniejszych ekranach */
+        margin: 1rem; /* Dodatkowy odstęp między elementami menu */
+    }
+
+    footer {
+        background-color: #000;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        margin-top: auto; /* Umieść stopkę na dole */
+        font-size: 0.5rem;
+    }
+}
+
+/* Style dla widoku domyślnego (ekrany o szerokości 769px i większe) */
+@media only screen and (min-width: 769px) {
+    .navbar {
+        background-color: transparent; /* Tło transparentne */
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        margin-left: 0rem;
+    }
+
+    .logo img {
+        width: 150px; /* Zmiana szerokości logo dla widoku domyślnego */
+        height: auto; /* Automatyczna wysokość, aby zachować proporcje */
+        margin-left: 0.5rem;
+    }
+
+    .menu-icon {
+        cursor: pointer;
+        display: none;
+        order: 3; /* Ikona hamburgera na prawo */
+    }
+
+    .bar {
+        width: 25px;
+        height: 3px;
+        background-color: #fff;
+        margin: 5px 0;
+    }
+
+    .header {
+        display: none; /* Ukryj nagłówek w domyślnym widoku */
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: row; /* Zmiana na poziome rozmieszczenie */
+        align-items: center; /* Wyśrodkowanie elementów w pionie */
+        order: 4; /* Menu na końcu */
+    }
+
+    .menu-item {
+        color: #fff;
+        margin: 0 15px;
+        text-decoration: none;
+    }
+
+    /* Dodatkowe style dla aktywnego elementu menu */
+    .menu-item.active {
+        font-weight: bold;
+    }
+}

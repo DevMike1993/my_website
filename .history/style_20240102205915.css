@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #000; /* Czarne tło stron */
+    color: #fff; /* Białe czcionki */
+}
+
+.navbar {
+    background-color: transparent; /* Tło transparentne */
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    /* Stylizacja dla logo */
+    max-width: 100px; /* Dostosuj szerokość logo */
+}
+
+.menu-icon {
+    cursor: pointer;
+    display: none;
+    order: 2; /* Ikona hamburgera na prawo */
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px 0;
+}
+
+.header {
+    display: none; /* Ukryj nagłówek w domyślnym widoku */
+}
+
+.menu {
+    display: flex;
+    order: 4; /* Menu na końcu */
+}
+
+.menu-item {
+    color: #fff;
+    margin: 0 15px;
+    display: none;
+    text-decoration: none;
+}
+
+/* Dodatkowe style dla aktywnego elementu menu */
+.menu-item.active {
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 768px) {
+    .navbar {
+        background-color: #000; /* Domyślne tło navbara na mniejszych ekranach */
+    }
+
+    .logo {
+        order: 1; /* Logo na początku */
+    }
+
+    .menu-icon {
+        display: block;
+        order: 2; /* Ikona hamburgera na prawo */
+    }
+
+    .header {
+        display: block; /* Wyświetl nagłówek w widoku mobilnym */
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0; /* Zmiana na prawo */
+        left: 0; /* Wyśrodkowanie menu */
+        background-color: transparent;
+        order: 3; /* Menu na końcu */
+    }
+
+    .menu-item {
+        color: #000; /* Domyślny kolor tekstu w menu na mniejszych ekranach */
+        display: block;
+        text-align: center; /* Wyśrodkowanie tekstu w menu na mniejszych ekranach */
+    }
+
+    .menu-item.active {
+        font-weight: normal;
+    }
+}

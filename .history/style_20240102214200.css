@@ -1,0 +1,46 @@
+@media only screen and (max-width: 768px) {
+    .navbar {
+        background-color: #000; /* Domyślne tło navbara na mniejszych ekranach */
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%; /* Szerokość navbara na całą szerokość ekranu */
+    }
+
+    .logo {
+        order: 1; /* Logo na początku w widoku mobilnym */
+        margin-bottom: 10px; /* Dodatkowy odstęp pod logiem */
+        margin-top: 0; /* Zresetuj odstęp nad logiem */
+    }
+
+    .menu-icon {
+        display: block; /* Wyświetl ikonę hamburgera na mniejszych ekranach */
+        order: 3; /* Ikona hamburgera na końcu w widoku mobilnym */
+        margin-bottom: 10px; /* Dodatkowy odstęp pod ikoną */
+    }
+
+    .header {
+        display: block; /* Wyświetl nagłówek w widoku mobilnym */
+        order: 2; /* Nagłówek po logo w widoku mobilnym */
+    }
+
+    .menu {
+        display: none; /* Ukryj menu w domyślnym widoku */
+        order: 4; /* Menu na końcu w widoku mobilnym */
+    }
+
+    .menu.show {
+        display: flex; /* Pokaż menu po kliknięciu w ikonę hamburgera */
+        flex-direction: column; /* Wyświetl menu pionowo */
+        align-items: center; /* Wyśrodkuj elementy menu */
+        position: absolute;
+        top: 60px; /* Ustaw menu poniżej navbara */
+        right: 0; /* Przesuń menu na prawo */
+        width: 100%; /* Szerokość menu na całą szerokość ekranu */
+    }
+
+    .menu-item {
+        text-align: center; /* Wyśrodkowanie tekstu w menu na mniejszych ekranach */
+        margin: 10px 0; /* Dodatkowy odstęp między elementami menu */
+    }
+}

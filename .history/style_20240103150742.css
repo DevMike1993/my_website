@@ -1,0 +1,179 @@
+body {
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    background-color: #000; /* Czarne tło stron */
+    color: #fff; /* Białe czcionki */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Styl dla domyślnego widoku*/
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo-container,
+.header-container,
+.menu-container {
+    display: flex;
+}
+
+.logo-container {
+    justify-content: flex-start; /* Logo będzie na lewej stronie */
+}
+
+.header-container {
+    justify-content: center; /* Nagłówek będzie na środku */
+}
+
+.menu-container {
+    justify-content: flex-end; /* Menu będzie na prawej stronie */
+}
+
+.menu-icon {
+    display: none; /* Domyślnie ukryta ikona hamburgera */
+}
+
+.menu-icon .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px 0;
+}
+
+
+footer {
+    text-align: center;
+    padding: 10px;
+    margin-top: auto; /* Umieść stopkę na dole */
+    font-size: 1rem;
+}
+
+@media only screen and (max-width: 768px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo-container,
+    .header-container,
+    .menu-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo-container {
+        justify-content: center; /* Logo będzie na środku */
+    }
+
+    .header-container {
+        justify-content: center; /* Nagłówek będzie na środku */
+    }
+
+    .menu-container {
+        justify-content: center; /* Menu będzie na środku */
+    }
+
+    .menu-icon {
+        display: block; /* Wyświetl ikonę hamburgera na mniejszych ekranach */
+        position: absolute;
+        right: 0;
+        top: 1.5rem;
+        margin-right: 1.5rem;
+        cursor: pointer; /* Dodano, aby pokazać, że ikona jest klikalna */
+    }
+
+    .menu {
+        display: none; /* Menu jest domyślnie ukryte */
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0.5rem 0;
+    }
+
+    .menu a.active {
+        
+        font-weight: bold;
+    }
+
+    .menu.show {
+        display: flex; /* Menu jest wyświetlane, gdy ma klasę 'show' */
+    }
+
+    footer {
+        text-align: center;
+        padding: 10px;
+        margin-top: auto; /* Umieść stopkę na dole */
+        font-size: 1rem;
+    }
+}
+
+
+
+
+
+
+/* Style dla widoku domyślnego (ekrany o szerokości 769px i większe) */
+@media only screen and (min-width: 769px) {
+    .navbar {
+        background-color: transparent; /* Tło transparentne */
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        margin-left: 0rem;
+    }
+
+    .logo img {
+        width: 150px; /* Zmiana szerokości logo dla widoku domyślnego */
+        height: auto; /* Automatyczna wysokość, aby zachować proporcje */
+        margin-left: 0.5rem;
+    }
+
+    .menu-icon {
+        cursor: pointer;
+        display: none;
+        order: 3; /* Ikona hamburgera na prawo */
+    }
+
+    .bar {
+        width: 25px;
+        height: 3px;
+        background-color: #fff;
+        margin: 5px 0;
+    }
+
+    .header {
+        display: none; /* Ukryj nagłówek w domyślnym widoku */
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: row; /* Zmiana na poziome rozmieszczenie */
+        align-items: center; /* Wyśrodkowanie elementów w pionie */
+        order: 4; /* Menu na końcu */
+    }
+
+    .menu-item {
+        color: #fff;
+        margin: 0 15px;
+        text-decoration: none;
+    }
+
+    /* Dodatkowe style dla aktywnego elementu menu */
+    .menu-item.active {
+        font-weight: bold;
+    }
+}

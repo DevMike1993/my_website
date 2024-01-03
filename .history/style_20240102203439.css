@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #000; /* Czarne tło */
+    color: #fff; /* Białe czcionki */
+}
+
+.navbar {
+    background-color: transparent; /* Tło navbara - transparentne */
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    /* Stylizacja dla logo */
+    max-width: 100px; /* Dostosuj szerokość logo */
+}
+
+.menu-icon {
+    cursor: pointer;
+    display: none;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px 0;
+}
+
+.menu {
+    display: flex;
+}
+
+.menu-item {
+    color: #fff;
+    margin: 0 15px;
+    display: none;
+}
+
+/* Dodatkowe style dla aktywnego elementu menu */
+.menu-item.active {
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 768px) {
+    .navbar {
+        background-color: #000; /* Domyślne tło navbara na mniejszych ekranach */
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 10px; /* Zmiana na prawo */
+        background-color: #333;
+        padding: 10px;
+    }
+
+    .menu-item {
+        display: block;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Contact</title>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">Logo</div>
+        <div class="menu-icon" onclick="menu.classList.toggle('show')">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <div class="header">Contact</div>
+        <div class="menu">
+            <a href="#" class="menu-item">Home</a>
+            <a href="#" class="menu-item">Gallery</a>
+            <a href="#" class="menu-item active">Contact</a>
+            <a href="#" class="menu-item">About</a>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuIcon = document.querySelector(".menu-icon");
+            const menu = document.querySelector(".menu");
+
+            menuIcon.addEventListener("click", function () {
+                menu.classList.toggle("show");
+            });
+        });
+    </script>
+</body>
+</html>

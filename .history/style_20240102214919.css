@@ -1,0 +1,105 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #000; /* Czarne tło stron */
+    color: #fff; /* Białe czcionki */
+}
+
+/* Styl dla domyślnego widoku*/
+
+.navbar {
+    background-color: transparent; /* Tło transparentne */
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    /* Stylizacja dla logo */
+    max-width: 100px; /* Dostosuj szerokość logo */
+    color: #fff; /* Kolor tekstu w logo */
+}
+
+.menu-icon {
+    cursor: pointer;
+    display: none; /* Domyślnie ukryta ikona hamburgera */
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px 0;
+}
+
+.header {
+    display: none; /* Ukryj nagłówek w domyślnym widoku */
+}
+
+.menu {
+    display: flex;
+}
+
+.menu-item {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+.menu-item.active {
+    font-weight: bold;
+}
+
+/* Styl dla mobilnego widoku*/
+
+@media only screen and (max-width: 768px) {
+    .navbar {
+        background-color: #000; /* Domyślne tło navbara na mniejszych ekranach */
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%; /* Szerokość navbara na całą szerokość ekranu */
+    }
+
+    .logo {
+        order: 1; /* Logo na początku w widoku mobilnym */
+        margin-bottom: 10px; /* Dodatkowy odstęp pod logiem */
+        margin-top: 0; /* Zresetuj odstęp nad logiem */
+    }
+
+    .menu-icon {
+        display: block; /* Wyświetl ikonę hamburgera na mniejszych ekranach */
+        order: 3; /* Ikona hamburgera na końcu w widoku mobilnym */
+        margin-bottom: 10px; /* Dodatkowy odstęp pod ikoną */
+        margin-right: 20px; /* Przesuń ikonę menu w prawo o 20px */
+    }
+
+    .header {
+        display: block; /* Wyświetl nagłówek w widoku mobilnym */
+        order: 2; /* Nagłówek po logo w widoku mobilnym */
+        margin-top: -5px; /* Drobna korekta marginesu, aby być idealnie na środku */
+        width: 100%; /* Ustaw pełną szerokość dla nagłówka */
+        text-align: center; /* Wyśrodkuj tekst w nagłówku */
+    }
+
+    .menu {
+        display: none; /* Ukryj menu w domyślnym widoku */
+        order: 4; /* Menu na końcu w widoku mobilnym */
+    }
+
+    .menu.show {
+        display: flex; /* Pokaż menu po kliknięciu w ikonę hamburgera */
+        flex-direction: column; /* Wyświetl menu pionowo */
+        align-items: center; /* Wyśrodkuj elementy menu */
+        position: absolute;
+        top: 60px; /* Ustaw menu poniżej navbara */
+        right: 0; /* Przesuń menu na prawo */
+        width: 100%; /* Szerokość menu na całą szerokość ekranu */
+    }
+
+    .menu-item {
+        text-align: center; /* Wyśrodkowanie tekstu w menu na mniejszych ekranach */
+        margin: 10px 0; /* Dodatkowy odstęp między elementami menu */
+    }
+}

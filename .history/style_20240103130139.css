@@ -1,0 +1,193 @@
+body {
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    background-color: #000; /* Czarne tło stron */
+    color: #fff; /* Białe czcionki */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ustawienie minimalnej wysokości na 100% widoku okna przeglądarki */
+}
+
+/* Styl dla domyślnego widoku*/
+
+.navbar {
+    background-color: transparent; /* Tło transparentne */
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    margin-left: 2rem;
+}
+
+.logo img {
+    max-width: 100%; /* Ustala maksymalną szerokość logo na 100% szerokości rodzica */
+    height: auto; /* Ustala wysokość proporcjonalnie do szerokości, zachowując proporcje */
+    border-radius: 10px; /* Zaokrąglenie krawędzi logo */
+     /* Cień wokół logo */    
+}
+
+.menu-icon {
+    cursor: pointer;
+    display: none; /* Domyślnie ukryta ikona hamburgera */
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px 0;
+}
+
+.header {
+    display: none; /* Ukryj nagłówek w domyślnym widoku */
+}
+
+.menu {
+    display: flex;
+}
+
+.menu-item {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+.menu-item.active {
+    font-weight: bold;
+}
+
+footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    margin-top: auto; /* Umieść stopkę na dole */
+    font-size: 1rem;
+}
+
+/* Style dla widoku mobilnego (ekrany o szerokości mniejszej niż 769px) */
+
+@media only screen and (max-width: 768px) {
+    .navbar {
+        background-color: #000;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .logo {
+        margin-left: 0rem;
+    }
+
+    .logo img {
+        width: 100px;
+        height: auto;
+        margin-left: 0.5rem;
+    }
+
+    .menu-icon {
+        display: block;
+        order: 3;
+        margin-bottom: 10px;
+        margin-right: 20px;
+    }
+
+    .header {
+        display: block;
+        order: 2;
+        margin-top: 0px;
+        margin-right: 2rem;
+        text-align: center;
+    }
+
+    .menu {
+        display: none;
+        order: 4;
+    }
+
+    .menu.show {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+    }
+
+    .menu-item {
+        text-align: center;
+        margin: 1rem;
+    }
+
+    footer {
+        background-color: #000;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        margin-top: auto;
+        font-size: 0.5rem;
+    }
+}
+
+/* Style dla widoku domyślnego (ekrany o szerokości 769px i większe) */
+@media only screen and (min-width: 769px) {
+    .navbar {
+        background-color: transparent;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+    }
+
+    .logo {
+        margin-left: 0rem;
+    }
+
+    .logo img {
+        width: 150px;
+        height: auto;
+        margin-left: 0.5rem;
+    }
+
+    .menu-icon {
+        cursor: pointer;
+        display: none;
+        order: 3;
+    }
+
+    .bar {
+        width: 25px;
+        height: 3px;
+        background-color: #fff;
+        margin: 5px 0;
+    }
+
+    .header {
+        display: none;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        order: 4;
+    }
+
+    .menu-item {
+        color: #fff;
+        margin: 0 15px;
+        text-decoration: none;
+    }
+
+    .menu-item.active {
+        font-weight: bold;
+    }
+}
+
